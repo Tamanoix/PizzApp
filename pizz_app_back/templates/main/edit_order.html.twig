@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+{% include('navbar/navbar.html.twig') %}
+
+    <div class="container">
+
+        <h5 class="text-center mt-5">MODIFICATION DE LA COMMANDE</h5>
+
+            {{ form_start(form) }}
+
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.status) }}
+            </div>
+          {#  <div class="col" id="some-custom-id">
+                {{ form_row(form.dueDate) }}
+            </div>#}
+        </div>
+
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

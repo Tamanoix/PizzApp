@@ -1,0 +1,7 @@
+{
+  "name": "pizz_app_delivery",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

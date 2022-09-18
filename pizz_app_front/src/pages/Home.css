@@ -1,0 +1,18 @@
+
+    .pizza-card {
+        text-align: center;
+        width: max-content;
+        margin: 20px auto;
+        border: 2px solid lightslategrey;
+        max-width: 80%;
+        padding: 20px 20px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+
+    .pizza-card-img {
+        margin: 15px 15px 0;
+    }
+
+
+    

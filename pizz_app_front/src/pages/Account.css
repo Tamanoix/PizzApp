@@ -1,0 +1,69 @@
+
+.my-informations , .my-orders {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-informations h2 , .my-orders h2 {
+    font-size: 20px;
+    background-color: lightslategrey;
+    text-align: center;
+}
+  
+.my-orders h3 {
+    font-size: 18px;
+    text-align: center;
+}
+  
+.my-informations p , .my-orders p {
+    font-size: 14px;
+    margin-top: 0;
+}
+  
+.infos-block , .orders-block {
+    padding: 20px;
+    border: 2px solid lightslategrey;
+}
+  
+.infos-block {
+    margin-bottom: 30px;
+}
+  
+.infos-block div div {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.infos-block div div p {
+    width: 50%;
+}
+  
+.orders-block {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+  
+.orders-block > div {
+    width: 50%;
+    padding: 20px;
+    border: 2px solid lightslategrey;
+    margin-right: 20px;
+}
+  
+.my-orders p.order-status {
+    width: 50%;
+}
+
+.back-btn {
+    margin: 50px 0;
+    align-self: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: lightslategrey;
+}
+
+span.bold-one {
+    color: yellow;
+    font-weight: bold;
+}

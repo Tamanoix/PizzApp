@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de la commande{% endblock %}
+
+{% block body %}
+
+    {% include('navbar/navbar.html.twig') %}
+
+    <div class="container">
+
+        <h5 class="text-center mt-5">DETAILS DE LA COMMANDE</h5>
+
+        <div class="mt-5" style="margin: 0 auto;" class="row">
+
+                <div class="col-12">
+                    <div class="card m-3" >
+
+                        <div class="card-body">
+                            <h5 class="card-title">Commande n°: {{ order.reference }}</h5>
+                           {# <p class="mt-2">Date de création: {{ order.created_at.date }}</p>#}
+
+                            <p class="mt-2">Point de vente: {{ order.pointOfSale.name }}</p>
+                            <p class="mt-2">Nom du client : {{ order.customer.firstname }}</p>
+                            <p class="mt-2">Prénom du client : {{ order.customer.lastname }}</p>
+
+                            <p>Créé le :{{ order.createdAt | date}}</p>
+                            <p>Modifié le :{{ order.updatedAt | date}}</p>
+
+
+                            <table style="width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th colspan="5">Quantité</th>
+                                    <th colspan="5">Produit</th>
+                                    <th colspan="5">Prix</th>
+                                    <th colspan="5">Sous total (euros)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    {% for key, orderDetail in  ordersDetails %}
+                                        {#{{ key }}#}
+                                        <tr>
+                                            <td  colspan="5">{{ orderDetail.quantity }} X </td>
+                                            <td  colspan="5">{{ orderDetail.product.name }}</td>
+                                            <td  colspan="5">{{ orderDetail.product.price }} Euros</td>
+
+                                                {% set amount = orderDetail.quantity * orderDetail.product.price %}
+
+                                            <td colspan="5">{{ orderDetail.getSubtotal }}</td>
+                                            <td colspan="5"><a href="{{ path('app_main_delete_row_of_order_detail', {'id' :  orderDetail.id}) }}" class="btn btn-danger"></a>Supprimer</td>
+
+                                        </tr>
+                                    {% endfor %}
+                                 {#   {{ order.total }}#}
+                                </tbody>
+                            </table>
+
+
+                            <div style="font-weight: bolder" class="mt-3">
+                                <p>Total: {{ order.getTotal }} euros</p>
+                            </div>
+
+
+                            <a href="{{ path('app_main_edit_order', {'id' : order.id}) }}" style="background-color: green;" class="btn mb-2">Modifier</a>
+                            <a href="{{ path('app_main_add_product_in_order', {'id' : order.id}) }}" style="background-color: green;" class="btn mb-2">Ajouter</a>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+{% endblock %}

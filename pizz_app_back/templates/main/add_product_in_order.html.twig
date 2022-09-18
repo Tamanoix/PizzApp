@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout de produits à une commande{% endblock %}
+
+{% block body %}
+
+{% include('navbar/navbar.html.twig') %}
+
+    <div class="container">
+
+        <h5 class="text-center mt-2">Ajout de produits à une commande</h5>
+
+            {{ form_start(form) }}
+
+
+            {{ form_end(form) }}
+    </div>
+{% endblock %}

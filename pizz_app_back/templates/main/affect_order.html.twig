@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification de commande{% endblock %}
+
+{% block body %}
+
+{% include('navbar/navbar.html.twig') %}
+
+    <div class="container">
+
+        <h5 class="text-center mt-2">Mofification d'une commande</h5>
+
+            {{ form_start(form) }}
+
+                {#<div class="row">
+
+                        {{ form_row(form.deliverer) }}
+                        {{ form_row(form.submit) }}
+
+                </div>#}
+            {{ form_end(form) }}
+    </div>
+{% endblock %}

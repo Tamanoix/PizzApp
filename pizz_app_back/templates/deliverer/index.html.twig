@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de LIVREURS disponible{% endblock %}
+
+{% block body %}
+
+    {% include('navbar/navbar.html.twig') %}
+
+    <div class="container">
+
+        <h5 class="text-center m-5">LIVREURS LIBRES</h5>
+
+
+        <div  class="row">
+            {% for deliverer in deliverers %}
+
+            <div class="col">
+                <div style="width: 18rem;" class="card m-3" >
+
+                    <img class="card-img-top" src="{{ asset('build/images/deliverer.jpg') }}" alt="deliverer">
+                    <div class="card-body">
+                        <h5 class="card-title">Livreur </h5>
+
+
+                        <p class="mt-2">{{ deliverer.last }}</p>
+                        <p class="mt-2">{{ deliverer.first }}</p>
+                        <p class="mt-2">Numéro de portable : {{ deliverer.phonenumber }}</p>
+
+                            <p class="mt-2">Statut : disponible</p>
+
+                        <a  href="{{ path('app_assign_circuit', {'id' : deliverer.idDeliverer }) }}" class="btn btn-danger">Attibuer un circuit</a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <section style="margin: 0;max-width: 100%; padding: 0; background-color:#d6522c;" class="container text-center">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-grey">
+            <div  class="container-fluid">
+                <a class="navbar-brand" href="#">  <img style="height: 40px;width: 40px" src="{{ asset('build/images/logo.png') }}" alt="ACME logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+
+                            <a class="nav-link active" aria-current="page" href="{{ path('app_restaurant') }}">Restaurant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_deliverer') }}">Livreurs</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Commandes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ path('app_history') }}">Historique</a></li>
+                                <li><a class="dropdown-item" href="#">En cours</a></li>
+                                <li><a class="dropdown-item" href="/order">Non affectées</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav ms-auto mr-3">
+                        {% if app.user %}
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ app.user.userIdentifier }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a class="dropdown-item" href="{{ path('admin')  }}">Accès admin</a></li>
+                                {% endif %}
+                                <li><a class="dropdown-item" href="#">Mon compte</a></li>
+                                <li>  <a class="nav-link" href="{{ path('app_logout')  }}">Me déconnecter</a></li>
+
+                            </ul>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+{% endblock %}

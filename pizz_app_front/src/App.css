@@ -1,0 +1,78 @@
+
+    .main-container {
+        overflow-y : scroll;
+    }
+
+    .pizzeria-infos p {
+        font-size: 12px;
+    }
+
+    .select-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+    }
+
+    .products-infos {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .total-order-table {
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .total-order-table tr , .total-order-table td {
+        border: 2px solid lightgray;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .modal button {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 40px;
+        border: 2px solid lightgray;
+    }
+
+    .modal {
+        width: 100%;
+        background: rgba(211, 211, 211, 0.5);
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000000 !important;
+        border: 5px solid black;
+        color: black;
+    }
+
+    .suppr {
+        padding: 2px 5px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .absolute-loader {
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 40px 0;
+        z-index: 100000 !important;
+        background: black;
+        color: yellow;
+        border: 2px solid yellow;
+        border-radius: 20px;
+    }
+
+    
